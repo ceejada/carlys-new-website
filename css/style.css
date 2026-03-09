@@ -23,3 +23,8 @@ h1 {
     font-size: 2.5em;
 }
 
+hr.solid {
+  border-top: 3px solid #ffffff;
+}
+
+
