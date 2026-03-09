@@ -4,7 +4,7 @@ body {
     margin: auto;
     padding: 40px;
     line-height: 1.6;
-    background: linear-gradient(135deg, #013b08, #001502);
+    background: linear-gradient(#005a0b, #013e07);
     color: #ffffff;
 
 }
@@ -16,6 +16,7 @@ nav {
 nav a {
     margin-right: 20px;
     text-decoration: none;
+    color: #00ff1e;
     font-weight: bold;
 }
 
@@ -23,8 +24,41 @@ h1 {
     font-size: 2.5em;
 }
 
-hr.solid {
-  border-top: 3px solid #ffffff;
+h2 {
+    font-size: 1.5em;
 }
+
+h3 {
+    font-size: 0.5em;
+}
+
+h2 a {
+    color: #5cc77e
+}
+
+hr.solid {
+  border-top: 3px solid #ffffff7f;
+}
+
+hr.dashed {
+  border: 2px dashed #ffffff7f
+}
+
+
+.button {
+    border: none;
+    font-family: Times, Times New Roman, serif;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button1 {background-color: #002008;}
+.button2 {background-color: #470042;}
 
 

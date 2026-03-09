@@ -1,23 +1,64 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Blog - Carly Adams</title>
+    <title>Blog - Carly J Adams</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
 <nav>
-    <a href="index.html">Home</a>
-    <a href="blog.html">Blog</a>
-</nav>
+  <a href="index.html">Home</a>
+  <a href="blog.html">Blog</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="corkboard.html">Corkboard</a>
+</nav>  
 
 <h1>blog</h1>
-<p>backlog of stuff from over the years while i get things sorted out</p>
+<hr class="dashed">
+<p>welcome to the blog! theres a lot going on here so feel free to narrow it down</p>
 
-<ul>
-<li><a href="posts/chair.html">dino chair</a></li>
-</ul>
+<button class="button button1">personal</button>
+<button class="button button1">professional</button>
+<button class="button button1">everything</button>
+
+
+<hr class="dashed">
+
+<button class="button button2">wip</button>
+<button class="button button2">archive</button>
+<button class="button button2">rambling</button>
+<button class="button button2">everything</button>
+
+<hr class="dashed">
+
+<div id="blog-posts-container">
+    <article class="blog-post-card" data-tags="personal, archive">
+        <h2><a href="posts/chair.html">dino chair</a></h2>
+        <h3>the date</h3>
+        <p>first sentence or two of the post ...</p>
+        <div class="tags">Tags: <span>personal, archive</span></div>
+    </article>
+
+    <article class="blog-post-card" data-tags="professional,wip">
+        <h2><a href="posts/vp.html">vp</a></h2>
+        <h3>the date</h3>
+        <img src="imgs/vp.JPG" width="200" height="150">
+        <p>pull first sentence from post if possible</p>
+        <div class="tags">Tags: <span>professional, wip</span></div>
+    </article>
+    
+</div>
+
+<select id="tag-filter">
+    <option value="all">Everything</option>
+    <option value="personal">Personal</option>
+    <option value="professional">Professional</option>
+    <option value="wip">WIP</option>
+    <option value="archive">Archive</option>
+    <option value="rambling">Rambling</option>
+</select>
+
 
 </body>
 </html>
