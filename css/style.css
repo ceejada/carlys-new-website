@@ -288,3 +288,14 @@ hr.dashed {
   font-size: 0.9em;
   margin-top: 6px;
 }
+
+.post-thumb img{
+    height: 50%;
+    width: 50%;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
