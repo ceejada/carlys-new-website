@@ -18,43 +18,57 @@
 
 <p>this is a sample blog post to make sure everything works right, featuring a high school woodworking project!</p>
 
-<img src="../imgs/chair3.jpg" alt="chair, pre-assembly" class="center">
-
-<p> i made this in high school but i still think about it sometimes this was so much fun. i’d love to do more like this sometime soon! sandy, eliana, and i designed the dino chair, modeled it in fusion, assembled and tweaked some laser cut models, and then manufactured and polished the chair in the shop! i got to play with design, 3d modeling and printing, and jig saws, what more could you ask for? i’d love to get a chance to build more stuff with my hands some time soon
-</p>
+<div class="chair-card">
+  <img src="../imgs/chair3.jpg" alt="chair, pre-assembly" class="chair-img">
+  <div class="project-text">
+    <p>I made this in high school but I still think about it sometimes — this was so much fun. Sandy, Eliana, and I designed the dino chair, modeled it in Fusion, assembled and tweaked some laser cut models, and then manufactured and polished the chair in the shop! I got to play with design, 3D modeling and printing, and jigsaw — what more could you ask for? I’d love to get a chance to build more stuff with my hands sometime soon.</p>
+  </div>
+</div>
 
 <!-- Slideshow container -->
 <div class="slideshow-container">
   <!-- Full-width images with number and caption text -->
   <div class="mySlides fade">
     <div class="numbertext">1 / 6</div>
-    <img src="../imgs/chair1.jpg" style="width:100%">
-    <div class="text">laser cut a few different variations before production</div>
+    <div class="slide-img-container">
+        <img src="../imgs/chair1.jpg" alt="laser cut a few different variations before production">
+        <div class="text">laser cut a few different variations before production</div>
+    </div>
   </div>
   <div class="mySlides fade">
     <div class="numbertext">2 / 6</div>
-    <img src="../imgs/chair2.jpg" style="width:100%">
-    <div class="text">sawing in progress</div>
+    <div class="slide-img-container">
+        <img src="../imgs/chair2.jpg" alt="sawing in progress">
+        <div class="text">sawing in progress</div>
+    </div>
   </div>
   <div class="mySlides fade">
     <div class="numbertext">3 / 6</div>
-    <img src="../imgs/chair4.jpg" style="width:100%">
-    <div class="text">assembling the pieces</div>
+    <div class="slide-img-container">
+        <img src="../imgs/chair4.jpg" alt="assembling the pieces">
+        <div class="text">assembling the pieces</div>
+    </div>
   </div>
   <div class="mySlides fade">
     <div class="numbertext">4 / 6</div>
-    <img src="../imgs/chair5.jpg" style="width:100%">
-    <div class="text">laser cutting our signatures</div>
+    <div class="slide-img-container">
+        <img src="../imgs/chair5.jpg" alt="laser cutting our signatures">
+        <div class="text">laser cutting our signatures</div>
+    </div>
   </div>
   <div class="mySlides fade">
     <div class="numbertext">5 / 6</div>
-    <img src="../imgs/chair6.jpg" style="width:100%">
-    <div class="text">sanded and stained</div>
+    <div class="slide-img-container">
+        <img src="../imgs/chair6.jpg" alt="sanded and stained">
+        <div class="text">sanded and stained</div>
+    </div>
   </div>
   <div class="mySlides fade">
     <div class="numbertext">6 / 6</div>
-    <img src="../imgs/chair7.jpg" style="width:100%">
-    <div class="text">the three of us + the finished product!</div>
+    <div class="slide-img-container">
+        <img src="../imgs/chair7.jpg" alt="the three of us + the finished product!">
+        <div class="text">the three of us + the finished product!</div>
+    </div>
   </div>
 
 
@@ -72,9 +86,38 @@
   <span class="dot" onclick="currentSlide(4)"></span>
   <span class="dot" onclick="currentSlide(5)"></span>
   <span class="dot" onclick="currentSlide(6)"></span>
-  <span class="dot" onclick="currentSlide(7)"></span>
 </div>
 
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+
+</script>
 
 </body>
 </html>

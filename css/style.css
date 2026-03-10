@@ -52,13 +52,6 @@ hr.dashed {
   border: 2px dashed #ffffff7f
 }
 
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
-
 .button {
     border: none;
     font-family: Times, Times New Roman, serif;
@@ -134,12 +127,29 @@ hr.dashed {
   margin: auto;
 }
 
-/* Hide the images by default */
+.slide-img-container{
+  width: 100%;
+  height: 500px;          /* fixed height for all slides */
+  overflow: hidden;
+}
+
+.slide-img-container img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* crops center of image to fill container */
+  object-position: center;/* ensures cropping is centered */
+}
+
 .mySlides {
   display: none;
 }
 
-/* Next & previous buttons */
+.mySlides img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
 .prev, .next {
   cursor: pointer;
   position: absolute;
@@ -169,7 +179,8 @@ hr.dashed {
 /* Caption text */
 .text {
   color: #f2f2f2;
-  font-size: 15px;
+  background-color: #002008;
+  font-size: 20px;
   padding: 8px 12px;
   position: absolute;
   bottom: 8px;
@@ -232,4 +243,20 @@ hr.dashed {
 
 .home-card:hover{
   background-color:#032f0a;
+}
+
+.chair-card {
+  display: flex;
+  align-items: flex-start; /* top-align text with image */
+  gap: 20px;               /* space between image and text */
+  margin-bottom: 30px;
+  max-width: 900px;
+}
+
+/* Image */
+.chair-img {
+  width: 300px;            /* fixed width */
+  height: 200px;           /* fixed height */
+  object-fit: cover;       /* crops if needed */
+  flex-shrink: 0;          /* prevents image from shrinking */
 }
