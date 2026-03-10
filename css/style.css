@@ -247,16 +247,19 @@ hr.dashed {
 
 .chair-card {
   display: flex;
-  align-items: flex-start; /* top-align text with image */
-  gap: 20px;               /* space between image and text */
-  margin-bottom: 30px;
-  max-width: 900px;
+  align-items: flex-start;   /* top-align text with image */
+  gap: 15px;                 /* smaller gap for thumbnail layout */
+  margin-bottom: 25px;
+  max-width: 800px;          /* prevents card from stretching too wide */
+  width: 90%;                /* scales with screen but never exceeds max-width */
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Image */
 .chair-img {
-  width: 300px;            /* fixed width */
-  height: 200px;           /* fixed height */
-  object-fit: cover;       /* crops if needed */
-  flex-shrink: 0;          /* prevents image from shrinking */
+  width: 120px;             /* thumbnail width */
+  height: 90px;             /* thumbnail height */
+  object-fit: cover;        /* crops vertical images nicely */
+  object-position: center;  /* crop center of vertical images */
+  flex-shrink: 0;           /* prevents image from shrinking */
 }
