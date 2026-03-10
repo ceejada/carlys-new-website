@@ -68,10 +68,16 @@
         card.dataset.tags = post.tags;
 
         card.innerHTML = `
-            <h2><a href="${post.file}">${title}</a></h2>
-            <h3>${date}</h3>
-            ${image ? `<img src="${image}" width="200">` : ""}
-            <p>${paragraph}</p>
+        <h2><a href="${post.file}">${title}</a></h2>
+        <h3>${date}</h3>
+
+        ${image ? `<img src="${image}" width="200" height="150">` : ""}
+
+        <p>${paragraph}</p>
+
+        <div class="tags">
+            Tags: <span>${post.tags}</span>
+        </div>
         `;
         container.appendChild(card);
         });
