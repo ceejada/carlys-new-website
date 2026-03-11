@@ -49,6 +49,12 @@ h5 {
 
 }
 
+h6 {
+  margin-top: 0.1px;
+  font-size: 0.75em;
+  color:#c6c6c6;
+}
+
 h2 a {
     color: #5cc77e
 }
@@ -298,4 +304,40 @@ hr.dashed {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.grid {
+  width: 50%;
+  height: 50%;
+  margin: auto;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 50px;
+  text-align: center;
+  font-size: 25px;
+  cursor: pointer;
+  color: white;
+}
+
+.containerTab {
+  padding: 20px;
+  color: white;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Closable button inside the image */
+.closebtn {
+  float: right;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
 }

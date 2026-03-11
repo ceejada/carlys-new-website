@@ -15,6 +15,7 @@
 </nav>  
 
 <h1>Capstone Updates - March 2026</h1>
+<h6>A quick overview of what I’ve been working on for the past few months, while I am home for spring break.</h6>
 <hr class="dashed">
 <p>It’s nice to be home for a week, but I can’t help but spend it thinking about my capstone project, as I wrap up my senior year. Unfortunately, my tools and setup for my senior capstone has been confined to the MPS Imaging Lab, hidden away in the basement at RIT’s arts building. Since my projector setup is inaccessible at the moment, I figured this is the perfect opportunity to start writing a little bit about the project and my process.
 </p>
@@ -26,6 +27,51 @@
 <p>
   My capstone focuses on correcting projected images when they are displayed on non-uniform surfaces, specifically screens with varying reflectances. The goal of the project is not only to compensate for these distortions, but also to evaluate the trade-offs involved in producing a radiometric match - if certain parts of the projection screen are darker than others, the scene’s dynamic range must be clipped globally to produce a uniform image. I am aiming to study whether or not this trade-off is worth it and how it affects perceived image quality. This involves three main parts.
 </p>
+
+<div class="row">
+  <div class="column" onclick="openTab('b1');" style="background:rgb(135, 157, 135);">Image Processing & Programming</div>
+  <div class="column" onclick="openTab('b2');" style="background:rgb(103, 132, 101);">Luminance Mapping & Measurement</div>
+  <div class="column" onclick="openTab('b3');" style="background:rgb(68, 81, 67);">Psychophysics & Image Quality Evaluation</div>
+</div>
+
+<!-- The expanding grid (hidden by default) -->
+<div id="b1" class="containerTab" style="display:none;background:rgb(135, 157, 135)">
+  <!-- If you want the ability to close the container, add a close button -->
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+  <h2>Image Processing & Programming</h2>
+  <p>This part of the project focuses on identifying the distortions on a projection screen and mapping the projected image to that screen. Using image processing techniques such as thresholding and perspective transforms, I analyze a photograph of the projection to determine the screen geometry and locate where distortions occur. By taking a picture of the projected test pattern and uploading it to my program, the system can automatically identify the screen and any patches on the screen. The test image is then segmented into regions based on where the projection falls, so that distortions in those areas can be manipulated independently.
+</p>
+  <img src="../imgs/processing.jpg" alt="processing" class="grid">
+  
+</div>
+
+<div id="b2" class="containerTab" style="display:none;background:rgb(103, 132, 101)">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+  <h2>Luminance Mapping & Measurement</h2>
+  <p>This project involves careful measurement and math to ensure accuracy throughout the pipeline. I first measured the reflectance and chromaticity of the projection screen using the PR-655 spectroradiometer, and then a series of paint swatches to identify ones that were several stops darker than the wall but closely matched in chromaticity (ΔE < 2). By converting code values to luminance using the projector’s measured gamma and the minimum and maximum reflectance of the surfaces, I could perform my corrections in linear light space. From there, I implemented several approaches to handle these luminance differences, including hard clipping, soft roll-offs, and partial correction methods.
+</p>
+    <img src="../imgs/patch.JPG" alt="patch" class="grid">
+</div>
+
+<div id="b3" class="containerTab" style="display:none;background:rgb(68, 81, 67)">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+  <h2>Psychophysics & Image Quality Evaluation</h2>
+  <p>For the final leg of the project, I am currently working on designing experiments to determine user preference. A uniform image clips the dynamic range significantly. Is it worth it to sacrifice the highlights and shadows for uniformity or will participants prefer the preserved dynamic range of the image even if some distortion remains? Maybe the ideal solution is somewhere in between? Studies will test when distortions become perceptually noticeable, and how viewers judge overall image quality when faced with this trade-off. 
+</p>
+  <p>Stay tuned for more as I wrap up this journey and analyze the results of ongoing experiments!</p>
+</div>
+
+<script>
+  function openTab(tabName) {
+  var i, x;
+  x = document.getElementsByClassName("containerTab");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  document.getElementById(tabName).style.display = "block";
+}
+
+</script>
 
 
 </body>
