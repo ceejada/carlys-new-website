@@ -41,6 +41,10 @@
         tags: "professional wip"
     },
     {
+        file: "posts/dit.html",
+        tags: "professional archive"
+    },    
+    {
         file: "posts/maps.html",
         tags: "professional archive"
     },    
@@ -62,7 +66,7 @@
         const doc = parser.parseFromString(html, "text/html");
 
         const title = doc.querySelector("h1")?.innerText || "Untitled";
-        const paragraph = doc.querySelector("p")?.innerText || "";
+        const paragraph = doc.querySelector("h6")?.innerText || "";
         const image = doc.querySelector("img")?.getAttribute("src") || "";
         const date = doc.querySelector(".date")?.innerText || "";
 
