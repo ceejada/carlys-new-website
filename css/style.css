@@ -40,6 +40,15 @@ h4 {
     text-align: center;
 }
 
+.button.active {
+  background-color: #273f31;
+  color: rgb(255, 255, 255);
+}
+
+.column:hover {
+  color: rgb(0, 49, 16);
+}
+
 h5 {
     text-align: center;
     font-size: 3em;
@@ -49,10 +58,18 @@ h5 {
 
 }
 
+/** para intro **/
 h6 {
-  margin-top: 0.1px;
-  font-size: 0.75em;
-  color:#c6c6c6;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-size: 1em;
+  color:#ffffff;
+}
+
+h7 {
+  font-size: 1em;
+  color:#ffffff;
+  font-style: italic;
 }
 
 h2 a {
@@ -260,6 +277,43 @@ hr.dashed {
   margin: auto;
 }
 
+.smpte-img {
+  display: block;
+  width: 400px;
+  height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.vp-img{
+  display: block;
+  width: 40%;
+  height: 40%;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: start;
+  margin: 40px 0;
+}
+
+.two-col-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+@media (max-width: 800px) {
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+}
+
 .corkboard-wrapper {
   position: fixed;
   top: 75px;
@@ -333,6 +387,11 @@ hr.dashed {
   display: table;
   clear: both;
 }
+
+.row:hover {
+  background-color: #717171;
+}
+
 
 /* Closable button inside the image */
 .closebtn {

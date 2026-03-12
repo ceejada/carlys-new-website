@@ -18,13 +18,15 @@
 <hr class="dashed">
 <p>Welcome to the blog! This is a casual place for me to post anything I'm working on. I am also working on a backlog of older projects that might make it on here. There's a lot going on here right now so feel free to narrow it down. </p>
 
-<h4>Content Type</h4>
-
 <!-- buttons! -->
 <div class="button-container">
     <button class="button button1" data-filter="personal">personal</button>
     <button class="button button1" data-filter="professional">professional</button>
-    <button class="button button1" data-filter="everything">everything</button>
+</div>
+
+<div class="button-container">
+    <button class="button button1" data-status="wip">wip</button>
+    <button class="button button1" data-status="archive">archive</button>
 </div>
 
 <!-- consider coming back here later to add archive/rambling/wip tags and have them look different stylistically
@@ -39,6 +41,14 @@
     {
         file: "posts/capstone.html",
         tags: "professional wip"
+    },
+    {
+        file: "posts/cg.html",
+        tags: "professional wip"
+    },
+    {
+        file: "posts/vp.html",
+        tags: "professional archive"
     },
     {
         file: "posts/dit.html",
@@ -68,7 +78,7 @@
         const title = doc.querySelector("h1")?.innerText || "Untitled";
         const paragraph = doc.querySelector("h6")?.innerText || "";
         const image = doc.querySelector("img")?.getAttribute("src") || "";
-        const date = doc.querySelector(".date")?.innerText || "";
+        const date = doc.querySelector("h7")?.innerText || "";
 
         const card = document.createElement("article");
 
@@ -95,22 +105,65 @@
 
 <!-- personal/professional sorting -->
 <script>
-const buttons = document.querySelectorAll("[data-filter]");
 
-buttons.forEach(button => {
+let activeType = null;
+let activeStatus = null;
+
+const typeButtons = document.querySelectorAll("[data-filter]");
+const statusButtons = document.querySelectorAll("[data-status]");
+
+function filterPosts() {
+  const posts = document.querySelectorAll(".blog-post-card");
+
+  posts.forEach(post => {
+    const tags = post.dataset.tags;
+
+    const typeMatch = !activeType || tags.includes(activeType);
+    const statusMatch = !activeStatus || tags.includes(activeStatus);
+
+    post.style.display = (typeMatch && statusMatch) ? "" : "none";
+  });
+}
+
+// TYPE FILTER
+typeButtons.forEach(button => {
   button.addEventListener("click", () => {
+
     const filter = button.dataset.filter;
-    const posts = document.querySelectorAll(".blog-post-card");
 
-    posts.forEach(post => {
-      const tags = post.dataset.tags;
+    if (activeType === filter) {
+      activeType = null;
+      button.classList.remove("active");
+    } else {
 
-      if (filter === "everything" || tags.includes(filter)) {
-        post.style.display = "";
-      } else {
-        post.style.display = "none";
-      }
-    });
+      typeButtons.forEach(b => b.classList.remove("active"));
+      button.classList.add("active");
+
+      activeType = (filter === "everything") ? null : filter;
+    }
+
+    filterPosts();
+  });
+});
+
+// STATUS FILTER
+statusButtons.forEach(button => {
+  button.addEventListener("click", () => {
+
+    const status = button.dataset.status;
+
+    if (activeStatus === status) {
+      activeStatus = null;
+      button.classList.remove("active");
+    } else {
+
+      statusButtons.forEach(b => b.classList.remove("active"));
+      button.classList.add("active");
+
+      activeStatus = status;
+    }
+
+    filterPosts();
   });
 });
 
