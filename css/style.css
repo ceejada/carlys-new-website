@@ -400,3 +400,39 @@ hr.dashed {
   font-size: 35px;
   cursor: pointer;
 }
+
+.contact {
+  margin: 60px 0;
+
+}
+
+.contact-links {
+  list-style: none;
+  padding-left: 0;
+}
+
+.contact-links li {
+  margin-bottom: 8px;
+  color:#ffffff;
+}
+
+.contact-links a{
+    color:#bcffc4;
+}
+
+.working-on {
+  margin: 60px 0;
+}
+
+.working-on ul {
+  list-style:circle;
+  padding-left: 0;
+}
+
+.working-on li {
+  margin-bottom: 10px;
+}
+
+.working-on a {
+  color:#ffffff;
+}
