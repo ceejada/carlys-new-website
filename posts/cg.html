@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Virtual Production 1</title>
+    <title>CG Stuff - VP2 WIP</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
@@ -14,12 +14,37 @@
   <a href="../corkboard.html">Corkboard</a>
 </nav>  
 
-<h1>CG Stuff</h1>
-<h7>Spring 2025</h7>
-<h6>Progress in virtual production 2</h6>
+<h1>CG Stuff - VP2 WIP</h1>
+<h7>Spring 2026</h7>
+<h6>Rigging and retargeting mocap data</h6>
 <h6>Tags: professional, wip</h6>
 <hr class="dashed">
 
+<p>In semester 2 of virtual production, the class is producing a series of beer commercials. The idea behind this project is to experiment with different tools and workflows, to learn as much as we can and play with visual effects. 
+</p>
+
+<p>Commercial 1 focused on using the LED wall for in-camera visual effects. We created a full 3D beach environment in Unreal, and filmed the commercial on the stage, syncing the physical camera with the virtual environment using marker-based camera tracking. I worked in the virtual art department team to help build the environment, and also made my debut as a pirate. Some BTS below :)
+</p>
+
+<img src="../imgs/vpbts.jpeg" alt="vp bts" class="vp-img">
+
+<p>Commercial 2 is a little more ambitious. We wanted to play with motion capture and take advantage of the Vicon system we have at RIT. The entire commercial is being created in Blender, with motion capture data to drive the character animation. While the class has previously worked with creating 3D environments, none of us have a background in 3D animation. Motion capture allows us to record some human movement and retarget it to digital characters to get a baseline for our animation, which is a great opportunity to learn about how mo-cap integrates into animation pipelines. </p>
+<p>My current role is preparing our hero asset, an animated beer can character. The base can model was created by another team member (thanks chase!!), but I adapted the asset so it could function as our hero character, to be copy and pasted into the scene. This involved:
+</p>
+
+<ul>
+  <li>Adding arms and legs to the model</li>
+  <li>Building a skeletal rig (armature)</li>
+  <li>Weight painting the mesh so the geometry deforms correctly during movement</li>
+  <li>Retargeting motion capture data onto the rig</li>
+</ul>
+
+
+<p>Below is a quick test animation showing the can doing a little dance using retargeted motion capture data! :)</p>
+
+<video width="320" height="240" controls>
+  <source src="../imgs/can_dance.mp4" type="video/mp4">
+</video>
 
 </body>
 </html>
