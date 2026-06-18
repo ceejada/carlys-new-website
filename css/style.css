@@ -328,6 +328,14 @@ hr.dashed {
   margin: auto;
 }
 
+.poster {
+  display: block;
+  width: 30%;
+  height: 30%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .smpte-img {
   display: block;
   width: 400px;
@@ -339,12 +347,13 @@ hr.dashed {
 
 .vp-img{
   display: block;
-  width: 40%;
-  height: 40%;
+  width: 80%;
+  height: 80%;
   margin-left: auto;
   margin-right: auto;
 
 }
+
 .two-col {
   display: grid;
   grid-template-columns: 1fr 1fr;
